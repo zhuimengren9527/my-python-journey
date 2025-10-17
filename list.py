@@ -74,11 +74,42 @@ too_expensive='ducati'
 motorcycles.remove(too_expensive)
 print(f"\n A {too_expensive.title()} is too expensive for me!","\n")
 
-
-
-
-
-
-
-
-
+#   练习
+guest=['A','B','C','D','E']
+guest_str=", ".join(guest[:-1]) + " and " + guest[-1]
+print(f"I want to invite {guest_str} to share a supper with me!","\n")
+print(f"D won't be able to keep the appointment!","\n")
+guest[3]="F"
+print(guest)
+guest_str= ", ".join(guest[:-1]) + " and " + guest[-1]
+print(f"I cordially invite {guest_str}  to share a supper with me!")
+guest.insert(0,"G")
+print(guest)
+guest.insert(3,"H")
+print(guest)
+guest.append("k")
+print(guest)
+print(f"I cordially invite {', '.join(guest[:-1])}  and  {guest[-1]} to share a supper with me!")
+print(f"Due to the delayed delivery of the newly purchased dining table, I have decided to invite only two guests to join me for supper.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+guest.pop()
+print(guest)
+print(f"I’m terribly sorry, but I’m unable to invite you to dinner.")
+del guest[0]
+print(guest)
+del guest[0]
+print(guest)
