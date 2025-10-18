@@ -17,5 +17,5 @@ print("\nHere is the original list again:")
 print(cars,"\n")
 
 cars=['bmw','audi','toyota','subaru']
-print(f"这个列表中有{len(cars)} 个元素")
+print(f"这个列表中有{len(cars)}个元素")
 

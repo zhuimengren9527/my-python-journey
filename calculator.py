@@ -12,4 +12,4 @@ div = num1 / num2
 print("加法结果:", add)
 print("减法结果:", sub)
 print("乘法结果:", mul)
-print("除法结果:", div)
+print("除法结果:", d iv)
