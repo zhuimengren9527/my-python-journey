@@ -231,40 +231,68 @@
         # ~ print(f"平均分：{avg:.1f},综合评价：{level}")
     # ~ print()
     
-#   综合练习3
-library_seats = {
+# ~ #   综合练习3
+# ~ library_seats = {
+    # ~ '第一排': [
+        # ~ {'occupied': False, 'power': True},
+        # ~ {'occupied': True,  'power': False},
+        # ~ {'occupied': False, 'power': False},
+    # ~ ],
+    # ~ '第二排': [
+        # ~ {'occupied': True,  'power': True},
+        # ~ {'occupied': False, 'power': False},
+    # ~ ]
+# ~ }
+
+# ~ for rows,seats in library_seats.items():
+    # ~ print(f"{rows}座位情况：")
+   
+    # ~ number = 0
+    # ~ for seat in seats:
+        # ~ if seat['occupied'] == True:
+            # ~ status = "已占用"
+        # ~ else:
+            # ~ status = "空闲"
+        
+        # ~ if seat['power'] == True:
+            # ~ socket = "有插座"
+        # ~ else:
+            # ~ socket ="无插座"
+        # ~ number += 1
+        
+        # ~ print(f"- 座位{number}: {status},{socket}")
+    # ~ print()
+    
+#   综合练习4
+cinema_seats = {
     '第一排': [
-        {'occupied': False, 'power': True},
-        {'occupied': True,  'power': False},
-        {'occupied': False, 'power': False},
+        {'occupied': False, 'VIP': True},
+        {'occupied': True, 'VIP': False},
+        {'occupied': False, 'VIP': False},
     ],
     '第二排': [
-        {'occupied': True,  'power': True},
-        {'occupied': False, 'power': False},
+        {'occupied': True, 'VIP': True},
+        {'occupied': False, 'VIP': False},
     ]
 }
-
-for rows,seats in library_seats.items():
+for rows,seats in cinema_seats.items():
     print(f"{rows}座位情况：")
-   
     number = 0
     for seat in seats:
         if seat['occupied'] == True:
             status = "已占用"
         else:
             status = "空闲"
-        
-        if seat['power'] == True:
-            socket = "有插座"
+            
+        if seat['VIP'] == True:
+            vips = "VIP"
         else:
-            socket ="无插座"
+            vips = "非VIP"
+        
         number += 1
         
-        print(f"- 座位{number}: {status},{socket}")
+        print(f"- 座位{number}:{status},{vips}")
     print()
-    
-     
-
 
 
 
