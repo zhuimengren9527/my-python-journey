@@ -639,12 +639,7 @@ while True:
             continue   
         else:
             store[customers_info]['库存'] -= buyed_amount
-            # ~ 判断用户输入名字是否在购物车中，第一次肯定不在，那么就执行else,
-            # ~ 将水果所有信息建立到购物车中，如果第二次购买同样的水果，
-            # ~ 水果信息已经在购物车中，那么就执行if,叠加数量，
-            # ~ 如果不是同样的水果，那么依然执行else,
-            # ~ 如果没有这个判断，除了每次叠加水果数量只外，
-            # ~ 其余信息都会覆盖之前的水果信息。
+         
             if customers_info in trally:
                 trally[customers_info]['数量'] += buyed_amount
             else:
