@@ -606,72 +606,131 @@
         # ~ print(f"\n{total_price}元")
     
 # ~ 练习12
-store = {
-    '苹果': {'价格': 3.5, '库存': 10, '描述': '新鲜的红苹果'},
-    '香蕉': {'价格': 2.2, '库存': 15, '描述': '天然香蕉，富含钾元素'},
-    '橙子': {'价格': 4.0, '库存': 20, '描述': '甜美的橙子，富含维生素C'},
-    '西瓜': {'价格': 12.0, '库存': 5, '描述': '清爽的西瓜，夏天必备'},
-}
-trally = {}
-empty = 0
-for fruits_name,fruits_attributes in store.items():
-    print(f"\n{fruits_name}:{fruits_attributes}")
+# ~ store = {
+    # ~ '苹果': {'价格': 3.5, '库存': 10, '描述': '新鲜的红苹果'},
+    # ~ '香蕉': {'价格': 2.2, '库存': 15, '描述': '天然香蕉，富含钾元素'},
+    # ~ '橙子': {'价格': 4.0, '库存': 20, '描述': '甜美的橙子，富含维生素C'},
+    # ~ '西瓜': {'价格': 12.0, '库存': 5, '描述': '清爽的西瓜，夏天必备'},
+# ~ }
+# ~ trally = {}
+# ~ empty = 0
+# ~ for fruits_name,fruits_attributes in store.items():
+    # ~ print(f"\n{fruits_name}:{fruits_attributes}")
     
-while True:
-    customers_info = input(f"\n请选择需要的商品： ")
-    if customers_info == '':
-        empty += 1
-        if empty > 3:
-            print(f"\n未选择商品，系统已退出")
-            break
-    if customers_info == 'quit':
-        break 
-    if customers_info in store:
-        buyed_amount = input(f"\n请输入需要购买的数量： ")
+# ~ while True:
+    # ~ customers_info = input(f"\n请选择需要的商品： ")
+    # ~ if customers_info == '':
+        # ~ empty += 1
+        # ~ if empty > 3:
+            # ~ print(f"\n未选择商品，系统已退出")
+            # ~ break
+    # ~ if customers_info == 'quit':
+        # ~ break 
+    # ~ if customers_info in store:
+        # ~ buyed_amount = input(f"\n请输入需要购买的数量： ")
         
-        try:
-            buyed_amount = int(buyed_amount)
-        except ValueError:
-            print(f"\n请输入有效数字： ")
-            continue
-        if buyed_amount > store[customers_info]['库存']:
-            print(f"\n库存不足，请重新购买： ")
-            continue   
-        else:
-            store[customers_info]['库存'] -= buyed_amount
-            # ~ 判断用户输入名字是否在购物车中，第一次肯定不在，那么就执行else,
-            # ~ 将水果所有信息建立到购物车中，如果第二次购买同样的水果，
-            # ~ 水果信息已经在购物车中，那么就执行if,叠加数量，
-            # ~ 如果不是同样的水果，那么依然执行else,
-            # ~ 如果没有这个判断，除了每次叠加水果数量只外，
-            # ~ 其余信息都会覆盖之前的水果信息。
-            if customers_info in trally:
-                trally[customers_info]['数量'] += buyed_amount
-            else:
-                trally[customers_info]={'价格':store[customers_info]['价格'],'数量':buyed_amount,'描述':store[customers_info]['描述']}
-        continu_info = input(f"\n你购买的商品已加入购物车，请问是否继续选购： ")
-        if continu_info == '是':
-            print(f"\n{trally}")
-            continue
-        else:
-            break 
-    else:
-        print(f"\n商品不存在，请重新输入： ")
-        continue        
-if trally:
+        # ~ try:
+            # ~ buyed_amount = int(buyed_amount)
+        # ~ except ValueError:
+            # ~ print(f"\n请输入有效数字： ")
+            # ~ continue
+        # ~ if buyed_amount > store[customers_info]['库存']:
+            # ~ print(f"\n库存不足，请重新购买： ")
+            # ~ continue   
+        # ~ else:
+            # ~ store[customers_info]['库存'] -= buyed_amount
+         
+            # ~ if customers_info in trally:
+                # ~ trally[customers_info]['数量'] += buyed_amount
+            # ~ else:
+                # ~ trally[customers_info]={'价格':store[customers_info]['价格'],'数量':buyed_amount,'描述':store[customers_info]['描述']}
+        # ~ continu_info = input(f"\n你购买的商品已加入购物车，请问是否继续选购： ")
+        # ~ if continu_info == '是':
+            # ~ print(f"\n{trally}")
+            # ~ continue
+        # ~ else:
+            # ~ break 
+    # ~ else:
+        # ~ print(f"\n商品不存在，请重新输入： ")
+        # ~ continue        
+# ~ if trally:
     
-    print(f"\n你购买的商品如下： ")
-    unit_price = 0 
-    total_price = 0               
-    for name,detail in trally.items():
-        unit_price = float(detail['价格']) * float(detail['数量'])
-        # ~ print(f"\n- {name}: 数量:{detail['数量']} 总价：{unit_price:.2f}")先把每个水果的价格打印出来，避免最后只输出最后的水果信息
-        total_price += unit_price
-print(f"\n总价:{total_price:.2f}元")    
+    # ~ print(f"\n你购买的商品如下： ")
+    # ~ unit_price = 0 
+    # ~ total_price = 0               
+    # ~ for name,detail in trally.items():
+        # ~ unit_price = float(detail['价格']) * float(detail['数量'])
+        # ~ print(f"\n- {name}: 数量:{detail['数量']} 总价：{unit_price:.2f}")
+        # ~ total_price += unit_price
+# ~ print(f"\n总价:{total_price:.2f}元") 
+   
+# ~ 练习13
+# ~ store = {
+    # ~ '苹果': {'价格': 3.5, '库存': 10, '描述': '新鲜的红苹果'},
+    # ~ '香蕉': {'价格': 2.2, '库存': 15, '描述': '天然香蕉，富含钾元素'},
+    # ~ '橙子': {'价格': 4.0, '库存': 20, '描述': '甜美的橙子，富含维生素C'},
+    # ~ '西瓜': {'价格': 12.0, '库存': 5, '描述': '清爽的西瓜，夏天必备'},
+# ~ }
+# ~ trally = {}
 
+# ~ print(f"\n可供选择的商品信息如下：")
+# ~ for commdities,goods_info in store.items():
+    # ~ print(f"\n{commdities}:{goods_info}")
+# ~ empty = 0
+# ~ while True:
+    # ~ customer_info = input(f"\n请输入你要购买的商品： ").strip()
+    # ~ if customer_info == '':
+        # ~ empty += 1
+        # ~ if empty > 3:
+            # ~ print(f"\n你未选择任何商品，系统已退出！！！")
+            # ~ break 
+    # ~ elif customer_info == 'quit':
+        # ~ break 
+    
+    # ~ if customer_info in store:
+        # ~ while True:
+            # ~ purchase_quality = input(f"\n请输入需要购买的数量： ")
+        
+            # ~ try:
+                # ~ purchase_quality = int(purchase_quality)
+            # ~ except ValueError:
+                # ~ print(f"\n请输入有效数字！！！")
+                # ~ continue
+        
+            # ~ if purchase_quality > int(store[customer_info]['库存']):
+                # ~ print(f"\n库存不足，请重新购买")
+                # ~ continue
+            # ~ else:
+                # ~ break
+        # ~ store[customer_info]['库存'] -= purchase_quality
+        
+        # ~ if customer_info in trally:
+            # ~ trally[customer_info]['数量'] += purchase_quality
+        # ~ else:
+            # ~ trally[customer_info] = {'价格':store[customer_info]['价格'],
+            # ~ '数量':purchase_quality,
+            # ~ '描述':store[customer_info]['描述']
+            # ~ }
             
-            
-            
+        # ~ continue_buy = input(f"\n你购买的商品已加入购物车，请问是否继续选购(是/否)：")
+        # ~ if continue_buy == '是':
+            # ~ continue 
+        # ~ else:
+            # ~ break
+    # ~ else:
+        # ~ print(f"\n商品不存在，请重新选购！！！")
+        # ~ continue
+    
+# ~ if trally:
+    # ~ print(f"\n你购买的商品如下：")
+    
+
+# ~ total_price = 0
+# ~ for goods_name,details in trally.items():
+    # ~ product_price = float(details['数量']) * float(details['价格'])
+    # ~ print(f"\n- {goods_name} {product_price:.2f}")  
+    # ~ total_price += product_price          
+# ~ print(f"\n总价是：{total_price:.2f}元")        
             
        
         
